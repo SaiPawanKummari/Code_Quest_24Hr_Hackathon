@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Best-Performing Student Recognition System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body><br>
+    <br><br><br><br>
+    <div class="container">
+        <h1>Best-Performing Student Recognition System</h1>
+        <h2>Select Admission Year</h2>
+        <div class="year-button-container">
+            {% for year in admitted_years %}
+                <a class="year-button" href="{{ url_for('year_results', year=year) }}">Year {{ year }}</a>
+            {% endfor %}
+        </div>
+        <div class="show-all-container">
+            <a class="show-all-button" href="{{ url_for('all_results') }}">Show All Results</a>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Details for {{ student.Name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Details for {{ student.Name }}</h1>
+        <p><strong>Student ID:</strong> {{ student.Student_id }}</p>
+        <p><strong>Admitted Year:</strong> {{ student.Admitted_year }}</p>
+        <p><strong>Core Course 1 Grade:</strong> {{ student.Core_Course_1_Grade }}</p>
+        <p><strong>Overall Score:</strong> {{ student.Overall_Score }}</p>
+        <p><strong>Predicted Score:</strong> {{ student.Predicted_Score }}</p>
+        <p><strong>Teaching Assistant:</strong> {{ student.Teaching_Assistant }}</p>
+        <a class="back-button" href="{{ url_for('year_results', year=student.Admitted_year) }}">Back to Results</a>
+    </div>
+</body>
+</html>

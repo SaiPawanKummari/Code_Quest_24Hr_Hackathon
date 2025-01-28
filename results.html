@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Students for Year {{ year }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Top Performing Students - Year {{ year }}</h1>
+        <table border="1" class="student-table">
+            <tr>
+                <th>Student Name</th>
+                <th>Student ID</th>
+                <th>Performance Score</th>
+                <th>Details</th>
+            </tr>
+            {% for student in top_students.itertuples() %}
+            <tr>
+                <td>{{ student.Name }}</td>
+                <td>{{ student.Student_id }}</td>
+                <td>{{ student.Predicted_Score }}</td>
+                <td><a class="details-button" href="{{ url_for('student_details', student_id=student.Student_id) }}">Details</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a class="back-button" href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+</body>
+</html>
